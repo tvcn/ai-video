@@ -202,3 +202,56 @@
   .ai6-lab-beat-top em { margin-left: 0; width: 100%; text-align: left; }
 }
 
+
+/* Tool hub evidence: official public-page screenshots, captioned. */
+.ai6-evidence-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 12px 0 4px; }
+.ai6-evidence-card { margin: 0; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--surface); min-width: 0; }
+.ai6-evidence-shot { display: block; background: var(--surface-2); }
+.ai6-evidence-shot img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 11; object-fit: cover; object-position: top center; border-bottom: 1px solid var(--line); }
+.ai6-evidence-card figcaption { padding: 10px 12px 12px; }
+.ai6-evidence-kicker { display: block; color: var(--muted); font: 600 9px/1.45 var(--mono, monospace); letter-spacing: .04em; text-transform: uppercase; }
+.ai6-evidence-card figcaption strong { display: block; margin-top: 3px; font-size: 13px; line-height: 1.4; }
+.ai6-evidence-card figcaption p { margin: 4px 0 6px; font-size: 11px; line-height: 1.62; color: var(--ink); }
+.ai6-evidence-card figcaption > a { font-size: 10px; color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }
+.ai6-evidence-card figcaption > a:hover { border-bottom-color: var(--accent); }
+@media (max-width: 640px) { .ai6-evidence-grid { grid-template-columns: 1fr; } }
+
+/* Free commercial-use real footage: reference clips, clearly not AI output. */
+.ai6-sample-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 12px 0 6px; }
+.ai6-sample-card { margin: 0; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--surface); min-width: 0; }
+.ai6-sample-card video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #111; border-bottom: 1px solid var(--line); }
+.ai6-sample-card figcaption { padding: 10px 12px 12px; }
+.ai6-sample-kicker { display: block; color: var(--accent); font: 700 9px/1.45 var(--mono, monospace); letter-spacing: .04em; text-transform: uppercase; }
+.ai6-sample-card figcaption strong { display: block; margin-top: 3px; font-size: 13px; line-height: 1.4; }
+.ai6-sample-card figcaption p { margin: 4px 0 8px; font-size: 11px; line-height: 1.62; color: var(--ink); }
+.ai6-sample-meta { display: flex; flex-wrap: wrap; gap: 6px 12px; font-size: 10px; color: var(--muted); }
+.ai6-sample-meta a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }
+.ai6-sample-meta a:hover { border-bottom-color: var(--accent); }
+@media (max-width: 640px) { .ai6-sample-grid { grid-template-columns: 1fr; } }
+
+/* Budget calculator: public-price model, not an account bill. */
+.ai6-budget-calc { margin: 12px 0 6px; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--surface); }
+.ai6-budget-fields { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--line); }
+.ai6-budget-field { display: grid; gap: 4px; background: var(--surface); padding: 9px 10px; min-width: 0; }
+.ai6-budget-field span { color: var(--muted); font: 600 9px/1.4 var(--mono, monospace); letter-spacing: .04em; text-transform: uppercase; }
+.ai6-budget-field input { width: 100%; min-width: 0; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--ink); padding: 6px 7px; font: 600 13px/1.4 var(--mono, monospace); }
+.ai6-budget-field input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.ai6-budget-out { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1px; background: var(--line); border-top: 1px solid var(--line); }
+.ai6-budget-out > div { background: var(--surface-2); padding: 9px 10px; min-width: 0; }
+.ai6-budget-out span { display: block; color: var(--muted); font: 600 9px/1.4 var(--mono, monospace); letter-spacing: .03em; text-transform: uppercase; }
+.ai6-budget-out b { display: block; margin-top: 3px; font: 600 13px/1.4 var(--mono, monospace); color: var(--ink); overflow-wrap: anywhere; }
+.ai6-budget-note { margin: 0; padding: 8px 10px; color: var(--muted); font-size: 10px; line-height: 1.55; }
+@media (max-width: 760px) { .ai6-budget-fields { grid-template-columns: 1fr 1fr; } .ai6-budget-out { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 420px) { .ai6-budget-out > div:last-child { grid-column: 1 / -1; } }
+
+/* Keep anchor targets below the sticky header + section nav. */
+.article-body section[id] { scroll-margin-top: 118px; }
+
+/* AI site: keep the fixed mobile tab bar readable instead of compressing nine labels. */
+@media (max-width: 760px) {
+  .static-page .static-tabbar { overflow-x: auto; justify-content: flex-start; gap: 2px; scrollbar-width: none; }
+  .static-page .static-tabbar .tab-site-link { flex: 0 0 auto; min-width: 54px; padding-left: 5px; padding-right: 5px; }
+}
+
+/* Breadcrumb current item must meet contrast; opacity .5 failed axe/Lighthouse. */
+.static-page .breadcrumbs span { opacity: 1; }
