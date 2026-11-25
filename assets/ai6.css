@@ -255,3 +255,9 @@
 
 /* Breadcrumb current item must meet contrast; opacity .5 failed axe/Lighthouse. */
 .static-page .breadcrumbs span { opacity: 1; }
+
+/* Homepage shares the 48/30 headline scale with the eight static homepages. */
+.static-page .ai6-home .article-hero{max-width:none}
+.static-page .ai6-home .article-hero h1{font-size:clamp(30px,4.8vw,48px);line-height:1.04}
+@media (max-width:560px){.static-page .ai6-home .article-hero h1{font-size:30px}}
+
